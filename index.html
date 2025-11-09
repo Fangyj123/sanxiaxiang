@@ -1,108 +1,110 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
+<html lang="zh-CN">   < html   超文本标记语言 lang   朗 = "应用" >
+<head>   < >负责人
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>丰顺三下乡成果展 - 山水秘境与黄金美味</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS CDN -->< !——顺风CSS CDN——>< !——顺风CSS CDN——>< ！【翻译
+    <script src="https://cdn.tailwindcss.com"></script>< script   脚本 src = " https://cdn.tailwindcss.com " > < /脚本>
     <!-- 自定义样式 -->
-    <style>
+    <style>   < >风格
         /* 平滑滚动 */
         html {
-            scroll-behavior: smooth;
+            scroll-behavior   行为: smooth;   scroll   滚动-behavior   行为:光滑;
         }
         
         /* 自定义动画 */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
+        @keyframes   关键帧 fadeInUp {
+            from {   从{
+                opacity: 0;   透明度:0;
+                transform: translateY(30px);变换:translateY (30 px);
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            to {   , {   到{，{
+                opacity: 1;   透明度:1;
+                transform: translateY(0);   变换:translateY (0);
             }
         }
         
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out;
+        .fade-in   在-up   向上 {   ．fade-in   在-up   向上 {
+            animation: fadeInUp 0.8s ease   缓解-out;动画：fadeInUp 0.8s    年代ease   缓解-out；   ;
         }
         
         /* 图片悬停效果 */
-        .img-hover-zoom {
-            overflow: hidden;
-            border-radius: 0.5rem;
+        .img-hover   徘徊-zoom   变焦 {   ．img   img-hover   徘徊-zoom   变焦 {
+            overflow: hidden;   溢出:隐藏;
+            border-radius   半径: 0.5rem;   border   边境 - radius   半径: 0.5快速眼动;
         }
         
-        .img-hover-zoom img {
-            transition: transform 0.5s ease;
+        .img-hover-zoom img {   ．img   img-hover   徘徊-zoom   变焦．img-hover   徘徊-zoom   变焦{。iming   。伊命 -hover   徘徊 -hover   徘徊 -zoom   变焦 -zoom   变焦
+            transition: transform 0.5s ease;过渡：变换0.5s   年代 ease；   缓解;
         }
         
-        .img-hover-zoom:hover img {
-            transform: scale(1.05);
+        .img-hover-zoom:hover img {。悬停img {．悬停img{。{
+            transform: scale(1.05);   变换:规模(1.05);
         }
         
         /* 导航栏激活状态 */
-        .nav-active {
-            color: #3b82f6;
-            font-weight: 600;
+        .nav-active {   。nav-active   活跃的 {
+            color: #3b82f6;   颜色:# 3 b82f6;
+            font-weight: 600;   粗细:600;
         }
-    </style>
-</head>
-<body class="bg-white text-gray-800 font-sans">
+    </style>   > < /风格
+</head>   < / >负责人
+<body class="bg-white text-gray-800 font-sans">< span    跨度style   风格 =“ font   字体- family   家庭 - family   家庭 -宋体”
     <!-- 导航栏 -->
     <nav id="navbar" class="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm transition-all duration-300">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="text-xl font-bold text-blue-600">丰顺三下乡成果展</div>
-            <div class="hidden md:flex space-x-8">
+            <div class="hidden md:flex space-x-8">< span    跨度style =“ font - family：宋体”< span    跨度style =“ font - family：宋体” < span    跨度style =“ font - family：宋体”
                 <a href="#home" class="nav-item hover:text-blue-500 transition-colors">首页</a>
-                <a href="#park" class="nav-item hover:text-blue-500 transition-colors">鸳鸯寨</a>
+                <a href="#park" class="nav-item hover:text-blue-500 transition-colors">鸳鸯寨</a>鸳鸯
                 <a href="#ginger" class="nav-item hover:text-blue-500 transition-colors">黄金姜糖</a>
                 <a href="#gallery" class="nav-item hover:text-blue-500 transition-colors">成果展示</a>
             </div>
-            <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+            <button id="mobile-menu-btn" class="md:hidden text-gray-600">class   类="md:hidden text- grey -600">class   类="md:hidden text- grey -600"“md：隐藏文本-灰色-600”>class   类 ="md:hidden text- grey -600"“md：隐藏文本-灰色-600”>
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
-            </button>
+            </button>   > < /按钮
         </div>
         
         <!-- 移动端菜单 -->
         <div id="mobile-menu" class="md:hidden bg-white px-4 py-2 hidden">
-            <a href="#home" class="block py-2 hover:text-blue-500 transition-colors">首页</a>
-            <a href="#park" class="block py-2 hover:text-blue-500 transition-colors">鸳鸯寨</a>
+            <a href="#home" class="block py-2 hover:text-blue   蓝色的-500 transition-colors   颜色">首页</a>
+            <a href="#park" class="block py-2 hover:text-blue-500 transition-colors">鸳鸯寨</a>鸳鸯
             <a href="#ginger" class="block py-2 hover:text-blue-500 transition-colors">黄金姜糖</a>
-            <a href="#gallery" class="block py-2 hover:text-blue-500 transition-colors">成果展示</a>
+            <a href="#gallery" class="block py-2 hover:text-blue   蓝色的-500 transition-colors   颜色">成果展示</a>
         </div>
-    </nav>
+    </nav>   <   <
+av>   <
+av>
 
     <!-- 视频英雄区 -->
     <section id="home" class="pt-16">
         <div class="relative h-screen flex items-center justify-center overflow-hidden">
             <!-- 视频背景 -->
-            <video id="mainVideo" class="absolute w-full h-full object-cover" poster="images/video-poster.jpg" muted loop>
+            <video id="mainVideo" class="absolute w-full h-full object-cover" poster="images/video-poster.jpg" muted loop   循环>
                 <source src="videos/main-video.mp4" type="video/mp4">
                 您的浏览器不支持视频标签。
-            </video>
+            </video>   < /视频>
             
             <!-- 深色遮罩层 -->
             <div class="absolute inset-0 bg-black/40"></div>
             
             <!-- 内容 -->
-            <div class="relative z-10 text-center text-white px-4 max-w-4xl fade-in-up">
+            <div class="relative z-10 text-center text-white px-4 max-w-4xl fade-in-up">< span    跨度style   风格 =" font - family：宋体
                 <h1 class="text-4xl md:text-6xl font-bold mb-6">丰顺三下乡成果展</h1>
                 <p class="text-xl md:text-2xl mb-8">探索山水秘境，品味黄金美味</p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button id="playVideoBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center">
+                <div class="flex flex-col sm:flex-row justify-center gap-4">< span    跨度style =" font - family：宋体
+                    <button id="playVideoBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center">class   类=“ font- family：宋体-宋体-宋体-宋体-宋体-宋体”
                         <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
                         </svg>
                         播放视频
-                    </button>
-                    <a href="#park" class="bg-transparent border-2 border-white hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                    </button>   > < /按钮
+                    <a href="#park" class="bg-transparent border-2 border-white hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium transition-colors">< span    跨度style =“ font- family：宋体，宋体，宋体，宋体，宋体”
                         探索更多
-                    </a>
+                    </a>   < / >
                 </div>
             </div>
             
@@ -113,34 +115,34 @@
                     <video id="modalVideo" class="w-full rounded-lg" controls>
                         <source src="videos/main-video.mp4" type="video/mp4">
                         您的浏览器不支持视频标签。
-                    </video>
+                    </video>   < /视频>
                 </div>
             </div>
         </div>
-    </section>
+    </section>   < / >节
 
     <!-- 鸳鸯寨森林公园板块 -->
     <section id="park" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">鸳鸯寨森林公园</h2>
+            <div class="text-center mb-12 fade-in-up">< span    跨度style =“ font - family：宋体”
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">鸳鸯寨森林公园</h2>< span style =" font- family：宋体-宋体-宋体-宋体-宋体-宋体-宋体-宋体-宋体-宋体-宋体-宋体-宋体
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">藏在粤东山水里的秘境！云海翻涌的壮阔、夕阳熔金的温柔，还有藏在亭台庙宇里的古老传说</p>
             </div>
             
             <!-- 特色亮点 -->
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-12">< span    跨度class=" font - family：宋体-宋体
+                <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up">< span    跨度style =" font - family：宋体，宋体，宋体
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">< span    跨度class=" font - family - family - family - family - family - family
                         <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4 4 0 003 15z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4 4 0 003 15z"></path> .
                         </svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">清晨云海</h3>
                     <p class="text-gray-600">雨后初晴的早晨，站在观景台看云海在山谷间翻腾涌动，如入仙境</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up">< span    跨度style =" font - family：宋体，宋体，宋体
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">< span    跨度class=" font - family - family - family - family - family - family - family
                         <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
                         </svg>
@@ -149,8 +151,8 @@
                     <p class="text-gray-600">夕阳西下时，整个山体被染成橙红色，产溪河像银色丝带蜿蜒而过</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up">< span    跨度style =" font - family：宋体，宋体，宋体
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">< span    跨度class=" font - family -宋体-宋体-宋体-宋体-宋体
                         <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
@@ -161,7 +163,7 @@
             </div>
             
             <!-- 图片展示 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">< span    跨度class=" font - family：宋体；
                 <div class="img-hover-zoom fade-in-up">
                     <img src="images/park-1.jpg" alt="鸳鸯寨云海" class="w-full h-64 object-cover rounded-lg" onerror="this.src='https://picsum.photos/600/400?nature=1'">
                 </div>
@@ -171,26 +173,26 @@
             </div>
             
             <!-- 实用信息折叠面板 -->
-            <div class="mt-12 bg-white rounded-xl shadow-md overflow-hidden fade-in-up">
+            <div class="mt-12 bg-white rounded-xl shadow-md overflow-hidden fade-in-up">< span    跨度class=" font - family - family - family - family - family
                 <div class="border-b">
-                    <button class="flex justify-between items-center w-full p-4 text-left font-semibold text-lg bg-blue-50">
+                    <button class="flex justify-between items-center w-full p-4 text-left font-semibold text-lg bg-blue-50">< span    跨度style =“ font- family：宋体-宋体-宋体-宋体”
                         <span>实用游玩攻略</span>
                         <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
-                    </button>
-                    <div class="p-4 bg-white">
-                        <div class="grid md:grid-cols-2 gap-6">
+                    </button>   > < /按钮
+                    <div class="p-4 bg-white">< span    跨度style =“ font - family   家庭 - family ”
+                        <div class="grid md:grid-cols-2 gap-6">< span    跨度style =" font - family：宋体
                             <div>
                                 <h4 class="font-semibold mb-2">交通指南</h4>
-                                <ul class="text-gray-600 space-y-2">
+                                <ul class="text-gray-600 space-y-2">< span    跨度style =“ font - family：宋体”
                                     <li>• 自驾：导航"鸳鸯寨森林公园"，从丰顺县城出发约50分钟</li>
                                     <li>• 公共交通：先到黄金镇，再打车前往</li>
                                 </ul>
                             </div>
                             <div>
                                 <h4 class="font-semibold mb-2">游玩建议</h4>
-                                <ul class="text-gray-600 space-y-2">
+                                <ul class="text-gray-600 space-y-2">< span    跨度style =“ font - family：宋体”
                                     <li>• 观赏云海：雨后初晴早晨，凌晨4点前到达</li>
                                     <li>• 观赏夕阳：下午四点半到达最佳</li>
                                     <li>• 免门票、免停车费，可露营</li>
@@ -201,48 +203,48 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>   < / >节
 
     <!-- 黄金姜糖板块 -->
     <section id="ginger" class="py-16 bg-amber-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">黄金姜糖</h2>
+            <div class="text-center mb-12 fade-in-up">< span    跨度style =“ font - family：宋体”
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">黄金姜糖</h2>< span style =" font- family：宋体-宋体-宋体-宋体-宋体-宋体-宋体-宋体-宋体-宋体
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">藏在山间的宝藏——琥珀糖体缀着金沙光泽，是阳光与火候的吻痕</p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="grid md:grid-cols-2 gap-12 items-center">< span    跨度style =“ font - family：宋体”
                 <div class="fade-in-up">
-                    <div class="bg-white p-6 rounded-xl shadow-md mb-6">
+                    <div class="bg-white p-6 rounded-xl shadow-md mb-6">< span    跨度style =“ font - family   家庭 - family   家庭 - family    家庭”
                         <h3 class="text-2xl font-semibold mb-4 text-amber-800">非遗传承，百年工艺</h3>
                         <p class="text-gray-700 mb-4">黄金姜糖源自南宋末年，是梅州市非物质文化遗产，采用纯天然姜汁配以淀粉精制而成，不含防腐剂。</p>
                         <p class="text-gray-700">每一口都仿佛能感受到黄金镇的山水之灵、人文之韵，既是美味食品，又是喜庆佳节、外出旅游馈赠亲友的理想选择。</p>
                     </div>
                     
                     <!-- 制作流程折叠面板 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in-up">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in-up">< span    跨度style =" font - family：宋体，宋体，宋体
                         <div class="border-b">
-                            <button class="flex justify-between items-center w-full p-4 text-left font-semibold text-lg bg-amber-50">
+                            <button class="flex justify-between items-center w-full p-4 text-left font-semibold text-lg bg-amber-50">< span    跨度style =" font- family：宋体-宋体-宋体-宋体-宋体
                                 <span>传统制作流程</span>
                                 <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                 </svg>
-                            </button>
-                            <div class="p-4 bg-white">
-                                <div class="space-y-3 text-gray-700">
-                                    <div class="flex">
+                            </button>   > < /按钮
+                            <div class="p-4 bg-white">< span    跨度style =“ font - family   家庭 - family    家庭”
+                                <div class="space-y-3 text-gray-700">< span    跨度style =“ font - family   家庭 - family    家庭”
+                                    <div class="flex">   < div class   类 = "弹性" >
                                         <span class="font-semibold w-24 flex-shrink-0">选姜研磨：</span>
                                         <span>小黄姜在晨露中苏醒，石臼研磨间，姜汁混着纤维渗出</span>
                                     </div>
-                                    <div class="flex">
+                                    <div class="flex">   < div class   类 = "弹性" >
                                         <span class="font-semibold w-24 flex-shrink-0">糯米处理：</span>
                                         <span>糯米浸泡、炒制、磨粉，竹簸箕里露养三日</span>
                                     </div>
-                                    <div class="flex">
+                                    <div class="flex">   < div class   类 = "弹性" >
                                         <span class="font-semibold w-24 flex-shrink-0">熬糖成型：</span>
                                         <span>红糖、姜汁、糕粉共入铁锅，80-90℃火候是关键</span>
                                     </div>
-                                    <div class="flex">
+                                    <div class="flex">   < div class   类 = "弹性" >
                                         <span class="font-semibold w-24 flex-shrink-0">切割包装：</span>
                                         <span>姜糖糊冷却后压成薄片，切成条形，打包走向各地</span>
                                     </div>
@@ -256,7 +258,7 @@
                     <div class="img-hover-zoom">
                         <img src="images/ginger-1.jpg" alt="黄金姜糖" class="w-full h-64 md:h-96 object-cover rounded-lg shadow-md" onerror="this.src='https://picsum.photos/600/400?food=1'">
                     </div>
-                    <div class="grid grid-cols-2 gap-4 mt-4">
+                    <div class="grid grid-cols-2 gap-4 mt-4">< span    跨度class=" font - family - family - family
                         <div class="img-hover-zoom">
                             <img src="images/ginger-2.jpg" alt="姜糖制作" class="w-full h-32 object-cover rounded-lg shadow" onerror="this.src='https://picsum.photos/300/200?food=2'">
                         </div>
@@ -267,18 +269,18 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>   < / >节
 
     <!-- 图片墙/成果展示 -->
     <section id="gallery" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">三下乡成果展示</h2>
+            <div class="text-center mb-12 fade-in-up">< span    跨度style =“ font - family：宋体”
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">三下乡成果展示</h2>< span style =" font- family：宋体-宋体-宋体-宋体-宋体-宋体-宋体-宋体-宋体-宋体-宋体-宋体
                 <p class="text-xl text-gray-600">用镜头记录我们的实践历程与丰硕成果</p>
             </div>
             
             <!-- 图片网格 -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">< span    跨度class=" font - family：宋体；font - family：宋体；font - family：宋体
                 <!-- 图片1 -->
                 <div class="img-hover-zoom fade-in-up">
                     <img src="images/gallery-1.jpg" alt="三下乡活动" class="w-full h-64 object-cover rounded-lg" onerror="this.src='https://picsum.photos/400/600?people=1'">
@@ -308,37 +310,37 @@
             <!-- 图片模态框 -->
             <div id="imageModal" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center hidden">
                 <div class="relative max-w-4xl max-h-full mx-4">
-                    <button id="closeImageBtn" class="absolute -top-12 right-0 text-white text-2xl hover:text-gray-300 z-10">×</button>
+                    <button    按钮id="closeImageBtn" class   类="absolute -top-12 right-0 text-white text-2xl hover:text   文本-gray-300 z-10">×</button>
                     <img id="modalImage" class="max-w-full max-h-full rounded-lg" src="" alt="">
                     <div id="imageCaption" class="text-white text-center mt-4"></div>
                 </div>
             </div>
         </div>
-    </section>
+    </section>   < / >节
 
     <!-- 页脚 -->
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="bg-gray-800 text-white py-8">< span    跨度style   风格 =“ font   字体 - family   家庭 - family   家庭 - family    家庭”
         <div class="container mx-auto px-4">
             <div class="text-center">
-                <h3 class="text-xl font-bold mb-4">丰顺三下乡实践团队</h3>
+                <h3 class="text-xl font-bold mb-4">数信学生组工三下乡突击队</h3>
                 <p class="text-gray-400 mb-4">探索山水秘境，传承非遗文化，助力乡村振兴</p>
                 <p class="text-gray-500 text-sm">© 2023 丰顺三下乡成果展示 · 所有图片版权归实践团队所有</p>
             </div>
         </div>
-    </footer>
+    </footer>   < /页脚>
 
-    <script>
+    <script>   < >脚本
         // 页面加载完成后执行
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {文档。addEventListener('DOMContentLoaded', function   函数() {
             // 导航栏滚动效果
             const navbar = document.getElementById('navbar');
             const navItems = document.querySelectorAll('.nav-item');
             
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    navbar.classList.add('shadow-md', 'bg-white/95');
+            window.addEventListener('scroll', function() {窗口。addEventListener('scroll', function() {
+                if (window.scrollY > 100) {   如果窗口。滚动> 100){
+                    navbar.classList.add('shadow-md', 'bg-white/95');navbar.classList。add(“shadow   “影子-md”、“bg   “md”，“bg”-white   白色 / 95”);
                 } else {
-                    navbar.classList.remove('shadow-md', 'bg-white/95');
+                    navbar.classList.remove('shadow-md', 'bg-white/95');navbar.classList。remove(“shadow-md”、“bg-white / 95”);
                 }
                 
                 // 更新导航激活状态
@@ -405,7 +407,7 @@
             });
             
             // 图片模态框
-            const galleryImages = document.querySelectorAll('#gallery img');
+            const galleryImages = document.querySelectorAll('#gallery img');const galleryImages =文档。querySelectorAll(#画廊img);
             const imageModal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
             const imageCaption = document.getElementById('imageCaption');
