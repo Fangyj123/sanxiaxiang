@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>丰顺三下乡成果展 - 山水秘境与黄金美味</title>
+    <title>丰顺三下乡成果展 - 世界客都的山水秘境与非遗传承</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- 自定义样式 -->
     <style>
         /* 平滑滚动 */
@@ -48,6 +50,25 @@
             color: #3b82f6;
             font-weight: 600;
         }
+        
+        /* 统计数据样式 */
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 梅州特色颜色 */
+        .hakka-primary {
+            color: #1e40af;
+        }
+        
+        .hakka-bg {
+            background-color: #f8fafc;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
@@ -57,8 +78,10 @@
             <div class="text-xl font-bold text-blue-600">丰顺三下乡成果展</div>
             <div class="hidden md:flex space-x-8">
                 <a href="#home" class="nav-item hover:text-blue-500 transition-colors">首页</a>
+                <a href="#meizhou" class="nav-item hover:text-blue-500 transition-colors">世界客都</a>
                 <a href="#park" class="nav-item hover:text-blue-500 transition-colors">鸳鸯寨</a>
                 <a href="#ginger" class="nav-item hover:text-blue-500 transition-colors">黄金姜糖</a>
+                <a href="#achievements" class="nav-item hover:text-blue-500 transition-colors">成果量化</a>
                 <a href="#gallery" class="nav-item hover:text-blue-500 transition-colors">成果展示</a>
             </div>
             <button id="mobile-menu-btn" class="md:hidden text-gray-600">
@@ -71,8 +94,10 @@
         <!-- 移动端菜单 -->
         <div id="mobile-menu" class="md:hidden bg-white px-4 py-2 hidden">
             <a href="#home" class="block py-2 hover:text-blue-500 transition-colors">首页</a>
+            <a href="#meizhou" class="block py-2 hover:text-blue-500 transition-colors">世界客都</a>
             <a href="#park" class="block py-2 hover:text-blue-500 transition-colors">鸳鸯寨</a>
             <a href="#ginger" class="block py-2 hover:text-blue-500 transition-colors">黄金姜糖</a>
+            <a href="#achievements" class="block py-2 hover:text-blue-500 transition-colors">成果量化</a>
             <a href="#gallery" class="block py-2 hover:text-blue-500 transition-colors">成果展示</a>
         </div>
     </nav>
@@ -92,7 +117,7 @@
             <!-- 内容 -->
             <div class="relative z-10 text-center text-white px-4 max-w-4xl fade-in-up">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6">丰顺三下乡成果展</h1>
-                <p class="text-xl md:text-2xl mb-8">探索山水秘境，品味黄金美味</p>
+                <p class="text-xl md:text-2xl mb-8">探索世界客都的山水秘境，传承非遗文化的匠心精神</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <button id="playVideoBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center">
                         <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -100,7 +125,7 @@
                         </svg>
                         播放视频
                     </button>
-                    <a href="#park" class="bg-transparent border-2 border-white hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                    <a href="#meizhou" class="bg-transparent border-2 border-white hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium transition-colors">
                         探索更多
                     </a>
                 </div>
@@ -119,6 +144,143 @@
         </div>
     </section>
 
+    <!-- 梅州介绍板块 -->
+    <section id="meizhou" class="py-16 bg-gradient-to-br from-blue-50 to-green-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">世界客都 · 人文秀区</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">梅州，位于广东省东北部，是全球最具代表性的客家人聚居地，被誉为"世界客都"</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                <div class="fade-in-up">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold mb-4 hakka-primary">客家文化集大成者</h3>
+                        <p class="text-gray-700 mb-4">梅州保存了最完整的客家民俗和最纯正的客家方言。"勤劳俭朴、坚韧不拔、崇文重教、爱国爱乡"的客家精神在这里生生不息。</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-lg mr-4">
+                                    <i class="fas fa-home text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">围龙屋</h4>
+                                    <p class="text-gray-600 text-sm">客家建筑瑰宝，与北京四合院、陕西窑洞等合称中国五大传统民居</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-2 rounded-lg mr-4">
+                                    <i class="fas fa-music text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">客家山歌</h4>
+                                    <p class="text-gray-600 text-sm">传唱千年的国家非物质文化遗产，用即兴唱腔抒发真挚情感</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 p-2 rounded-lg mr-4">
+                                    <i class="fas fa-globe-asia text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">华侨之乡</h4>
+                                    <p class="text-gray-600 text-sm">著名侨乡，"下南洋"奋斗史塑造了开放、包容、不忘根本的独特气质</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in-up">
+                    <div class="img-hover-zoom">
+                        <img src="images/meizhou-1.jpg" alt="梅州全景" class="w-full h-64 md:h-80 object-cover rounded-lg shadow-md" onerror="this.src='https://picsum.photos/600/400?nature=1'">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 梅州文旅与美食 -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="fade-in-up">
+                    <div class="bg-white p-6 rounded-xl shadow-md h-full">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-utensils text-orange-500 mr-2"></i>
+                            梅州美食
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="border-l-4 border-orange-400 pl-4">
+                                <h4 class="font-semibold">盐焗鸡</h4>
+                                <p class="text-gray-600 text-sm">金黄油亮，皮脆肉滑，承载着客家人迁徙途中用盐保存食物的智慧</p>
+                            </div>
+                            <div class="border-l-4 border-orange-400 pl-4">
+                                <h4 class="font-semibold">酿豆腐</h4>
+                                <p class="text-gray-600 text-sm">鲜嫩豆腐中酿入肉馅，体现了客家人对中原饺子文化的演变与传承</p>
+                            </div>
+                            <div class="border-l-4 border-orange-400 pl-4">
+                                <h4 class="font-semibold">梅菜扣肉</h4>
+                                <p class="text-gray-600 text-sm">梅菜之香吸收肉之油腻，咸中带甜，肥而不腻</p>
+                            </div>
+                            <div class="border-l-4 border-orange-400 pl-4">
+                                <h4 class="font-semibold">客家腌面</h4>
+                                <p class="text-gray-600 text-sm">梅州人早餐的灵魂，配上一碗三及第汤，开启元气满满的一天</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in-up">
+                    <div class="bg-white p-6 rounded-xl shadow-md h-full">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-map-marked-alt text-green-500 mr-2"></i>
+                            梅州文旅
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="border-l-4 border-green-400 pl-4">
+                                <h4 class="font-semibold">
+                                    <a href="https://www.meizhou.cn/" target="_blank" class="hover:text-green-600 transition-colors">雁南飞茶田景区</a>
+                                </h4>
+                                <p class="text-gray-600 text-sm">茶园与旅游度假完美结合，体验客家风情和茶文化的绝佳之地</p>
+                            </div>
+                            <div class="border-l-4 border-green-400 pl-4">
+                                <h4 class="font-semibold">叶剑英纪念园</h4>
+                                <p class="text-gray-600 text-sm">全国红色旅游经典景区，深入了解一代伟人的生平事迹</p>
+                            </div>
+                            <div class="border-l-4 border-green-400 pl-4">
+                                <h4 class="font-semibold">百侯古镇</h4>
+                                <p class="text-gray-600 text-sm">中国历史文化名镇，感受明清时期的官宦府第和客家民居</p>
+                            </div>
+                            <div class="border-l-4 border-green-400 pl-4">
+                                <h4 class="font-semibold">
+                                    <a href="https://www.meizhou.gov.cn/" target="_blank" class="hover:text-green-600 transition-colors">客天下景区</a>
+                                </h4>
+                                <p class="text-gray-600 text-sm">全方位展示客家文化的现代化旅游产业园</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 政策呼应 -->
+            <div class="mt-8 bg-white p-6 rounded-xl shadow-md fade-in-up">
+                <h3 class="text-xl font-bold mb-4 text-center">政策呼应</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="p-4 bg-blue-50 rounded-lg">
+                        <p class="font-semibold">乡村振兴</p>
+                    </div>
+                    <div class="p-4 bg-green-50 rounded-lg">
+                        <p class="font-semibold">苏区振兴</p>
+                    </div>
+                    <div class="p-4 bg-yellow-50 rounded-lg">
+                        <p class="font-semibold">百千万工程</p>
+                    </div>
+                    <div class="p-4 bg-purple-50 rounded-lg">
+                        <p class="font-semibold">绿美梅州</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 鸳鸯寨森林公园板块 -->
     <section id="park" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -129,31 +291,25 @@
             
             <!-- 特色亮点 -->
             <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up stat-card">
                     <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4 4 0 003 15z"></path>
-                        </svg>
+                        <i class="fas fa-cloud text-blue-600 text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">清晨云海</h3>
                     <p class="text-gray-600">雨后初晴的早晨，站在观景台看云海在山谷间翻腾涌动，如入仙境</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up stat-card">
                     <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                        </svg>
+                        <i class="fas fa-sun text-orange-600 text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">夕阳美景</h3>
                     <p class="text-gray-600">夕阳西下时，整个山体被染成橙红色，产溪河像银色丝带蜿蜒而过</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up stat-card">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
+                        <i class="fas fa-hiking text-green-600 text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">三条路线</h3>
                     <p class="text-gray-600">驱车登顶、爬山挑战、森林探秘，三种方式体验不同风情</p>
@@ -161,7 +317,7 @@
             </div>
             
             <!-- 图片展示 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div class="img-hover-zoom fade-in-up">
                     <img src="images/park-1.jpg" alt="鸳鸯寨云海" class="w-full h-64 object-cover rounded-lg" onerror="this.src='https://picsum.photos/600/400?nature=1'">
                 </div>
@@ -171,7 +327,7 @@
             </div>
             
             <!-- 实用信息折叠面板 -->
-            <div class="mt-12 bg-white rounded-xl shadow-md overflow-hidden fade-in-up">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in-up">
                 <div class="border-b">
                     <button class="flex justify-between items-center w-full p-4 text-left font-semibold text-lg bg-blue-50">
                         <span>实用游玩攻略</span>
@@ -269,6 +425,95 @@
         </div>
     </section>
 
+    <!-- 成果量化板块 -->
+    <section id="achievements" class="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">实践成果量化</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">我们的努力与收获，用数据见证成长</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center stat-card">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">5</div>
+                    <div class="text-gray-600">产出推文</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center stat-card">
+                    <div class="text-3xl font-bold text-green-600 mb-2">1</div>
+                    <div class="text-gray-600">原创视频</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center stat-card">
+                    <div class="text-3xl font-bold text-purple-600 mb-2">350+</div>
+                    <div class="text-gray-600">视频浏览量</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center stat-card">
+                    <div class="text-3xl font-bold text-orange-600 mb-2">1000+</div>
+                    <div class="text-gray-600">推文总浏览量</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center stat-card">
+                    <div class="text-3xl font-bold text-red-600 mb-2">4</div>
+                    <div class="text-gray-600">媒体报道</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center stat-card">
+                    <div class="text-3xl font-bold text-indigo-600 mb-2">2</div>
+                    <div class="text-gray-600">走访村数</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center stat-card">
+                    <div class="text-3xl font-bold text-teal-600 mb-2">1</div>
+                    <div class="text-gray-600">走访企业</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center stat-card">
+                    <div class="text-3xl font-bold text-pink-600 mb-2">1</div>
+                    <div class="text-gray-600">数字文旅白皮书</div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in-up">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-file-alt text-blue-500 mr-2"></i>
+                        文字成果
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>访谈报告文字达 <span class="font-semibold">XXX</span> 字</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>数字文旅白皮书 <span class="font-semibold">1</span> 份</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>调研报告 <span class="font-semibold">多份</span></span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in-up">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-palette text-purple-500 mr-2"></i>
+                        创意成果
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>设计原创IP <span class="font-semibold">1</span> 个</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>实物文创 <span class="font-semibold">X</span> 套</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>面向校内 <span class="font-semibold">120</span> 余人宣讲 <span class="font-semibold">1</span> 次</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 图片墙/成果展示 -->
     <section id="gallery" class="py-16 bg-white">
         <div class="container mx-auto px-4">
@@ -320,9 +565,17 @@
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4">
             <div class="text-center">
-                <h3 class="text-xl font-bold mb-4">数信学生组工三下乡突击队</h3>
+                <h3 class="text-xl font-bold mb-4">丰顺三下乡实践团队</h3>
                 <p class="text-gray-400 mb-4">探索山水秘境，传承非遗文化，助力乡村振兴</p>
-                <p class="text-gray-500 text-sm">© 2025 丰顺三下乡成果展示 · 所有图片版权归实践团队所有</p>
+                <div class="flex justify-center space-x-6 mb-4">
+                    <a href="https://www.meizhou.gov.cn/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        梅州市人民政府网
+                    </a>
+                    <a href="https://www.meizhou.cn/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        梅州宣传网
+                    </a>
+                </div>
+                <p class="text-gray-500 text-sm">© 2023 丰顺三下乡成果展示 · 所有图片版权归实践团队所有</p>
             </div>
         </div>
     </footer>
@@ -419,7 +672,7 @@
                 });
             });
             
-            closeImageBtn.addEventListener('click', function   函数() {
+            closeImageBtn.addEventListener('click', function() {
                 imageModal.classList.add('hidden');
             });
             
@@ -429,16 +682,16 @@
                 rootMargin: '0px 0px -50px 0px'
             };
             
-            const observer = new IntersectionObserver(function(entries) {const observer = new IntersectionObserver(function   函数(entries)) {
-                entries.forEach(entry => {   条目。forEach(entry => {
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in-up');entry.target.classList.add(“fade-in   在-up”);
+                        entry.target.classList.add('fade-in-up');
                         observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
             
-            document.querySelectorAll('section > div > .fade-in-up, .img-hover-zoom').forEach(el => {文档。querySelectorAll（'section b> div b> . '）fade-in   在-up   向上, .img-hover   徘徊-zoom”)。forEach(el => {
+            document.querySelectorAll('section > div > .fade-in-up, .img-hover-zoom').forEach(el => {
                 observer.observe(el);
             });
             
@@ -446,6 +699,6 @@
             updateActiveNav();
             mainVideo.play();
         });
-    </script>   > < /脚本
-</body>   身体< / >
+    </script>
+</body>
 </html>
