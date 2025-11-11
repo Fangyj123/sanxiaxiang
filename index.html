@@ -69,6 +69,172 @@
         .hakka-bg {
             background-color: #f8fafc;
         }
+        
+        /* 原创IP模态框样式 */
+        .ip-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 100;
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+        
+        .ip-modal-content {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 1000px;
+            width: 90%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .ip-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .ip-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .ip-gallery img:hover {
+            transform: scale(1.03);
+        }
+        
+        .ip-description {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .close-btn {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #555;
+        }
+        
+        .close-btn:hover {
+            color: #000;
+        }
+        
+        /* IP图片放大模态框 */
+        .ip-image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 110;
+            overflow: auto;
+            padding: 20px;
+        }
+        
+        .ip-image-modal-content {
+            position: relative;
+            margin: auto;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ip-image-modal-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .ip-image-caption {
+            color: white;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .ip-image-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .ip-image-close:hover {
+            color: #ccc;
+        }
+        
+        .ip-image-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .ip-image-nav:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .ip-image-prev {
+            left: 20px;
+        }
+        
+        .ip-image-next {
+            right: 20px;
+        }
+        
+        /* 修复折叠面板样式 */
+        .collapse-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .collapse-content.open {
+            max-height: 500px;
+        }
+        
+        .collapse-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .collapse-icon.rotate {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
@@ -81,6 +247,7 @@
                 <a href="#meizhou" class="nav-item hover:text-blue-500 transition-colors">世界客都</a>
                 <a href="#park" class="nav-item hover:text-blue-500 transition-colors">鸳鸯寨</a>
                 <a href="#ginger" class="nav-item hover:text-blue-500 transition-colors">黄金姜糖</a>
+                <a href="#ip-showcase" class="nav-item hover:text-blue-500 transition-colors">原创IP</a>
                 <a href="#achievements" class="nav-item hover:text-blue-500 transition-colors">成果量化</a>
                 <a href="#gallery" class="nav-item hover:text-blue-500 transition-colors">成果展示</a>
             </div>
@@ -97,6 +264,7 @@
             <a href="#meizhou" class="block py-2 hover:text-blue-500 transition-colors">世界客都</a>
             <a href="#park" class="block py-2 hover:text-blue-500 transition-colors">鸳鸯寨</a>
             <a href="#ginger" class="block py-2 hover:text-blue-500 transition-colors">黄金姜糖</a>
+            <a href="#ip-showcase" class="block py-2 hover:text-blue-500 transition-colors">原创IP</a>
             <a href="#achievements" class="block py-2 hover:text-blue-500 transition-colors">成果量化</a>
             <a href="#gallery" class="block py-2 hover:text-blue-500 transition-colors">成果展示</a>
         </div>
@@ -125,6 +293,10 @@
                         </svg>
                         播放视频
                     </button>
+                    <a href="#ip-showcase" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center">
+                        <i class="fas fa-palette mr-2"></i>
+                        查看原创IP
+                    </a>
                     <a href="#meizhou" class="bg-transparent border-2 border-white hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium transition-colors">
                         探索更多
                     </a>
@@ -236,9 +408,7 @@
                         </h3>
                         <div class="space-y-3">
                             <div class="border-l-4 border-green-400 pl-4">
-                                <h4 class="font-semibold">
-                                    <a href="https://www.meizhou.cn/" target="_blank" class="hover:text-green-600 transition-colors">雁南飞茶田景区</a>
-                                </h4>
+                                <h4 class="font-semibold">雁南飞茶田景区</h4>
                                 <p class="text-gray-600 text-sm">茶园与旅游度假完美结合，体验客家风情和茶文化的绝佳之地</p>
                             </div>
                             <div class="border-l-4 border-green-400 pl-4">
@@ -250,9 +420,7 @@
                                 <p class="text-gray-600 text-sm">中国历史文化名镇，感受明清时期的官宦府第和客家民居</p>
                             </div>
                             <div class="border-l-4 border-green-400 pl-4">
-                                <h4 class="font-semibold">
-                                    <a href="https://www.meizhou.gov.cn/" target="_blank" class="hover:text-green-600 transition-colors">客天下景区</a>
-                                </h4>
+                                <h4 class="font-semibold">客天下景区</h4>
                                 <p class="text-gray-600 text-sm">全方位展示客家文化的现代化旅游产业园</p>
                             </div>
                         </div>
@@ -264,17 +432,37 @@
             <div class="mt-8 bg-white p-6 rounded-xl shadow-md fade-in-up">
                 <h3 class="text-xl font-bold mb-4 text-center">政策呼应</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                    <div class="p-4 bg-blue-50 rounded-lg">
+                    <div class="p-4 bg-blue-50 rounded-lg policy-item" data-target="rural-revitalization">
                         <p class="font-semibold">乡村振兴</p>
                     </div>
-                    <div class="p-4 bg-green-50 rounded-lg">
+                    <div class="p-4 bg-green-50 rounded-lg policy-item" data-target="soviet-revitalization">
                         <p class="font-semibold">苏区振兴</p>
                     </div>
-                    <div class="p-4 bg-yellow-50 rounded-lg">
+                    <div class="p-4 bg-yellow-50 rounded-lg policy-item" data-target="hundred-thousand-project">
                         <p class="font-semibold">百千万工程</p>
                     </div>
-                    <div class="p-4 bg-purple-50 rounded-lg">
+                    <div class="p-4 bg-purple-50 rounded-lg policy-item" data-target="green-meizhou">
                         <p class="font-semibold">绿美梅州</p>
+                    </div>
+                </div>
+                
+                <!-- 政策详情 -->
+                <div id="policy-details" class="mt-6 hidden">
+                    <div id="rural-revitalization" class="policy-detail hidden p-4 bg-blue-50 rounded-lg">
+                        <h4 class="font-bold text-lg mb-2">乡村振兴政策详情</h4>
+                        <p>乡村振兴战略是习近平同志2017年10月18日在党的十九大报告中提出的战略。十九大报告指出，农业农村农民问题是关系国计民生的根本性问题，必须始终把解决好"三农"问题作为全党工作的重中之重，实施乡村振兴战略。</p>
+                    </div>
+                    <div id="soviet-revitalization" class="policy-detail hidden p-4 bg-green-50 rounded-lg">
+                        <h4 class="font-bold text-lg mb-2">苏区振兴政策详情</h4>
+                        <p>苏区振兴政策旨在支持原中央苏区经济社会发展，促进革命老区振兴发展。梅州作为原中央苏区的重要组成部分，享受国家特殊政策支持，推动基础设施建设、产业发展和民生改善。</p>
+                    </div>
+                    <div id="hundred-thousand-project" class="policy-detail hidden p-4 bg-yellow-50 rounded-lg">
+                        <h4 class="font-bold text-lg mb-2">百千万工程详情</h4>
+                        <p>百千万工程是广东省推动高质量发展的重要举措，旨在培育百家龙头企业、千家专精特新企业、万家高新技术企业，构建现代化产业体系，推动经济高质量发展。</p>
+                    </div>
+                    <div id="green-meizhou" class="policy-detail hidden p-4 bg-purple-50 rounded-lg">
+                        <h4 class="font-bold text-lg mb-2">绿美梅州详情</h4>
+                        <p>绿美梅州是梅州市生态文明建设的重要举措，通过实施森林质量精准提升、城乡一体绿美提升、绿美保护地提升、绿色通道品质提升、古树名木保护提升、全民爱绿植绿护绿等六大行动，建设人与自然和谐共生的美丽梅州。</p>
                     </div>
                 </div>
             </div>
@@ -329,28 +517,30 @@
             <!-- 实用信息折叠面板 -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in-up">
                 <div class="border-b">
-                    <button class="flex justify-between items-center w-full p-4 text-left font-semibold text-lg bg-blue-50">
+                    <button class="flex justify-between items-center w-full p-4 text-left font-semibold text-lg bg-blue-50 collapse-btn" data-target="park-guide">
                         <span>实用游玩攻略</span>
-                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 collapse-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div class="p-4 bg-white">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <h4 class="font-semibold mb-2">交通指南</h4>
-                                <ul class="text-gray-600 space-y-2">
-                                    <li>• 自驾：导航"鸳鸯寨森林公园"，从丰顺县城出发约50分钟</li>
-                                    <li>• 公共交通：先到黄金镇，再打车前往</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-2">游玩建议</h4>
-                                <ul class="text-gray-600 space-y-2">
-                                    <li>• 观赏云海：雨后初晴早晨，凌晨4点前到达</li>
-                                    <li>• 观赏夕阳：下午四点半到达最佳</li>
-                                    <li>• 免门票、免停车费，可露营</li>
-                                </ul>
+                    <div id="park-guide" class="collapse-content">
+                        <div class="p-4 bg-white">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold mb-2">交通指南</h4>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li>• 自驾：导航"鸳鸯寨森林公园"，从丰顺县城出发约50分钟</li>
+                                        <li>• 公共交通：先到黄金镇，再打车前往</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">游玩建议</h4>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li>• 观赏云海：雨后初晴早晨，凌晨4点前到达</li>
+                                        <li>• 观赏夕阳：下午四点半到达最佳</li>
+                                        <li>• 免门票、免停车费，可露营</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -378,29 +568,31 @@
                     <!-- 制作流程折叠面板 -->
                     <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in-up">
                         <div class="border-b">
-                            <button class="flex justify-between items-center w-full p-4 text-left font-semibold text-lg bg-amber-50">
+                            <button class="flex justify-between items-center w-full p-4 text-left font-semibold text-lg bg-amber-50 collapse-btn" data-target="ginger-process">
                                 <span>传统制作流程</span>
-                                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-5 h-5 collapse-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
-                            <div class="p-4 bg-white">
-                                <div class="space-y-3 text-gray-700">
-                                    <div class="flex">
-                                        <span class="font-semibold w-24 flex-shrink-0">选姜研磨：</span>
-                                        <span>小黄姜在晨露中苏醒，石臼研磨间，姜汁混着纤维渗出</span>
-                                    </div>
-                                    <div class="flex">
-                                        <span class="font-semibold w-24 flex-shrink-0">糯米处理：</span>
-                                        <span>糯米浸泡、炒制、磨粉，竹簸箕里露养三日</span>
-                                    </div>
-                                    <div class="flex">
-                                        <span class="font-semibold w-24 flex-shrink-0">熬糖成型：</span>
-                                        <span>红糖、姜汁、糕粉共入铁锅，80-90℃火候是关键</span>
-                                    </div>
-                                    <div class="flex">
-                                        <span class="font-semibold w-24 flex-shrink-0">切割包装：</span>
-                                        <span>姜糖糊冷却后压成薄片，切成条形，打包走向各地</span>
+                            <div id="ginger-process" class="collapse-content">
+                                <div class="p-4 bg-white">
+                                    <div class="space-y-3 text-gray-700">
+                                        <div class="flex">
+                                            <span class="font-semibold w-24 flex-shrink-0">选姜研磨：</span>
+                                            <span>小黄姜在晨露中苏醒，石臼研磨间，姜汁混着纤维渗出</span>
+                                        </div>
+                                        <div class="flex">
+                                            <span class="font-semibold w-24 flex-shrink-0">糯米处理：</span>
+                                            <span>糯米浸泡、炒制、磨粉，竹簸箕里露养三日</span>
+                                        </div>
+                                        <div class="flex">
+                                            <span class="font-semibold w-24 flex-shrink-0">熬糖成型：</span>
+                                            <span>红糖、姜汁、糕粉共入铁锅，80-90℃火候是关键</span>
+                                        </div>
+                                        <div class="flex">
+                                            <span class="font-semibold w-24 flex-shrink-0">切割包装：</span>
+                                            <span>姜糖糊冷却后压成薄片，切成条形，打包走向各地</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -418,6 +610,43 @@
                         </div>
                         <div class="img-hover-zoom">
                             <img src="images/ginger-3.jpg" alt="姜糖包装" class="w-full h-32 object-cover rounded-lg shadow" onerror="this.src='https://picsum.photos/300/200?food=3'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 原创IP展示板块 -->
+    <section id="ip-showcase" class="py-16 bg-gradient-to-r from-green-50 to-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">原创IP展示</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">竹姜伴品牌形象，展现黄金镇的文化温度与产业活力</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden fade-in-up">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-6">
+                        <div class="img-hover-zoom h-full">
+                            <img src="images/zhujiangban.jpg" alt="竹姜伴品牌形象" class="w-full h-full object-cover rounded-lg" onerror="this.src='https://picsum.photos/600/400?people=7'">
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-green-700">竹姜伴品牌形象</h3>
+                        <div class="ip-description mb-6">
+                            <p class="text-gray-700">"暖暖"的温婉传承匠心，"姜姜"的热情彰显活力。二者构成黄金镇最鲜活的品牌名片：既有竹编工艺的"匠心温度"，又有特色姜糖的"产业热度"，共同向外界传递出一个温暖、友好、充满希望的黄金镇形象。</p>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button id="show-nuannuan" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center">
+                                <i class="fas fa-female mr-2"></i>
+                                暖暖（竹编少女）
+                            </button>
+                            <button id="show-jiangjiang" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center">
+                                <i class="fas fa-leaf mr-2"></i>
+                                姜姜（活力姜宝）
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -561,21 +790,69 @@
         </div>
     </section>
 
+    <!-- 原创IP模态框 - 暖暖 -->
+    <div id="nuannuan-modal" class="ip-modal">
+        <div class="ip-modal-content">
+            <span class="close-btn" id="close-nuannuan">&times;</span>
+            <h2 class="text-2xl font-bold mb-4 text-green-700">暖暖 - 竹编少女</h2>
+            
+            <div class="ip-description">
+                <p>她是黄金镇竹编文化的守护者与传承者。其设计灵感直接来源于当地历史悠久的竹编手工艺。她头戴装饰山花的竹编斗笠，身着黄绿相间的衣裙（黄色象征竹子的内里，绿色象征竹子的表皮），整体形象温婉娴静，充满了传统匠人的质朴与灵巧。她代表着黄金镇的文化根脉与生态之美。</p>
+            </div>
+            
+            <div class="ip-gallery">
+                <img src="images/nuannuan-1.jpg" alt="暖暖形象1" data-index="0" data-ip="nuannuan">
+                <img src="images/nuannuan-2.jpg" alt="暖暖形象2" data-index="1" data-ip="nuannuan">
+                <img src="images/nuannuan-3.jpg" alt="暖暖形象3" data-index="2" data-ip="nuannuan">
+                <img src="images/nuannuan-4.jpg" alt="暖暖形象4" data-index="3" data-ip="nuannuan">
+                <img src="images/nuannuan-5.jpg" alt="暖暖形象5" data-index="4" data-ip="nuannuan">
+            </div>
+        </div>
+    </div>
+
+    <!-- 原创IP模态框 - 姜姜 -->
+    <div id="jiangjiang-modal" class="ip-modal">
+        <div class="ip-modal-content">
+            <span class="close-btn" id="close-jiangjiang">&times;</span>
+            <h2 class="text-2xl font-bold mb-4 text-amber-700">姜姜 - 活力姜宝</h2>
+            
+            <div class="ip-description">
+                <p>他是黄金镇特色姜糖产业的活力代言人。以本地特产生姜为原型进行拟人化创作，通体为鲜姜的亮黄色，头戴的小斗笠上长着一片翠绿姜叶，身挎的竹篮里装满了"神奇的姜糖"。他笑容灿烂，动态十足，象征着黄金镇特色农业的蓬勃生机与无限商机。</p>
+            </div>
+            
+            <div class="ip-gallery">
+                <img src="images/jiangjiang-1.jpg" alt="姜姜形象1" data-index="0" data-ip="jiangjiang">
+                <img src="images/jiangjiang-2.jpg" alt="姜姜形象2" data-index="1" data-ip="jiangjiang">
+            </div>
+        </div>
+    </div>
+
+    <!-- IP图片放大模态框 -->
+    <div id="ip-image-modal" class="ip-image-modal">
+        <div class="ip-image-modal-content">
+            <span class="ip-image-close" id="ip-image-close">&times;</span>
+            <div class="ip-image-nav ip-image-prev" id="ip-image-prev">&#10094;</div>
+            <div class="ip-image-nav ip-image-next" id="ip-image-next">&#10095;</div>
+            <img id="ip-modal-image" src="" alt="">
+            <div id="ip-image-caption" class="ip-image-caption"></div>
+        </div>
+    </div>
+
     <!-- 页脚 -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4">
             <div class="text-center">
-                <h3 class="text-xl font-bold mb-4">华农数信党务三下乡突击队</h3>
+                <h3 class="text-xl font-bold mb-4">丰顺三下乡实践团队</h3>
                 <p class="text-gray-400 mb-4">探索山水秘境，传承非遗文化，助力乡村振兴</p>
                 <div class="flex justify-center space-x-6 mb-4">
                     <a href="https://www.meizhou.gov.cn/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
                         梅州市人民政府网
                     </a>
                     <a href="https://www.meizhou.cn/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                        梅州网
+                        梅州宣传网
                     </a>
                 </div>
-                <p class="text-gray-500 text-sm">© 2025 华农数信党务三下乡突击队成果展示 · 所有图片版权归实践团队所有</p>
+                <p class="text-gray-500 text-sm">© 2023 丰顺三下乡成果展示 · 所有图片版权归实践团队所有</p>
             </div>
         </div>
     </footer>
@@ -644,16 +921,39 @@
                 mainVideo.play();
             });
             
-            // 折叠面板功能
-            const collapseButtons = document.querySelectorAll('.bg-blue-50, .bg-amber-50');
+            // 折叠面板功能 - 修复版本
+            const collapseButtons = document.querySelectorAll('.collapse-btn');
             
             collapseButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    const content = this.nextElementSibling;
-                    const icon = this.querySelector('svg');
+                    const targetId = this.getAttribute('data-target');
+                    const content = document.getElementById(targetId);
+                    const icon = this.querySelector('.collapse-icon');
                     
-                    content.classList.toggle('hidden');
-                    icon.classList.toggle('rotate-180');
+                    content.classList.toggle('open');
+                    icon.classList.toggle('rotate');
+                });
+            });
+            
+            // 政策呼应功能
+            const policyItems = document.querySelectorAll('.policy-item');
+            const policyDetails = document.getElementById('policy-details');
+            
+            policyItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // 隐藏所有政策详情
+                    document.querySelectorAll('.policy-detail').forEach(detail => {
+                        detail.classList.add('hidden');
+                    });
+                    
+                    // 显示选中的政策详情
+                    const targetDetail = document.getElementById(targetId);
+                    if (targetDetail) {
+                        targetDetail.classList.remove('hidden');
+                        policyDetails.classList.remove('hidden');
+                    }
                 });
             });
             
@@ -676,22 +976,147 @@
                 imageModal.classList.add('hidden');
             });
             
+            // 原创IP模态框功能
+            const showNuannuanBtn = document.getElementById('show-nuannuan');
+            const showJiangjiangBtn = document.getElementById('show-jiangjiang');
+            const nuannuanModal = document.getElementById('nuannuan-modal');
+            const jiangjiangModal = document.getElementById('jiangjiang-modal');
+            const closeNuannuanBtn = document.getElementById('close-nuannuan');
+            const closeJiangjiangBtn = document.getElementById('close-jiangjiang');
+            
+            showNuannuanBtn.addEventListener('click', function() {
+                nuannuanModal.style.display = 'block';
+            });
+            
+            showJiangjiangBtn.addEventListener('click', function() {
+                jiangjiangModal.style.display = 'block';
+            });
+            
+            closeNuannuanBtn.addEventListener('click', function() {
+                nuannuanModal.style.display = 'none';
+            });
+            
+            closeJiangjiangBtn.addEventListener('click', function() {
+                jiangjiangModal.style.display = 'none';
+            });
+            
+            // 点击模态框外部关闭
+            window.addEventListener('click', function(event) {
+                if (event.target === nuannuanModal) {
+                    nuannuanModal.style.display = 'none';
+                }
+                if (event.target === jiangjiangModal) {
+                    jiangjiangModal.style.display = 'none';
+                }
+            });
+            
+            // IP图片放大功能
+            const ipImageModal = document.getElementById('ip-image-modal');
+            const ipModalImage = document.getElementById('ip-modal-image');
+            const ipImageCaption = document.getElementById('ip-image-caption');
+            const ipImageClose = document.getElementById('ip-image-close');
+            const ipImagePrev = document.getElementById('ip-image-prev');
+            const ipImageNext = document.getElementById('ip-image-next');
+            
+            let currentIpImages = [];
+            let currentIpIndex = 0;
+            let currentIpName = '';
+            
+            // 为所有IP图片添加点击事件
+            document.querySelectorAll('.ip-gallery img').forEach(img => {
+                img.addEventListener('click', function() {
+                    const ipName = this.getAttribute('data-ip');
+                    const index = parseInt(this.getAttribute('data-index'));
+                    
+                    openIpImageModal(ipName, index);
+                });
+            });
+            
+            function openIpImageModal(ipName, index) {
+                currentIpName = ipName;
+                currentIpIndex = index;
+                
+                // 获取对应IP的所有图片
+                const ipModal = document.getElementById(`${ipName}-modal`);
+                currentIpImages = Array.from(ipModal.querySelectorAll('.ip-gallery img'));
+                
+                // 显示当前图片
+                showIpImage(index);
+                
+                // 显示模态框
+                ipImageModal.style.display = 'block';
+            }
+            
+            function showIpImage(index) {
+                const img = currentIpImages[index];
+                ipModalImage.src = img.src;
+                ipImageCaption.textContent = img.alt;
+                currentIpIndex = index;
+                
+                // 更新导航按钮状态
+                ipImagePrev.style.display = index === 0 ? 'none' : 'flex';
+                ipImageNext.style.display = index === currentIpImages.length - 1 ? 'none' : 'flex';
+            }
+            
+            // 关闭IP图片模态框
+            ipImageClose.addEventListener('click', function() {
+                ipImageModal.style.display = 'none';
+            });
+            
+            // 上一张图片
+            ipImagePrev.addEventListener('click', function() {
+                if (currentIpIndex > 0) {
+                    showIpImage(currentIpIndex - 1);
+                }
+            });
+            
+            // 下一张图片
+            ipImageNext.addEventListener('click'   “点击”, function   函数() {
+                if (currentIpIndex < currentIpImages.length - 1) {
+                    showIpImage(currentIpIndex + 1);
+                }
+            });
+            
+            // 点击模态框外部关闭
+            window.addEventListener('click'   “点击”, function(event) {
+                if (event.target   目标 === ipImageModal) {
+                    ipImageModal.style.display = 'none';
+                }
+            });
+            
+            // 键盘导航
+            document.addEventListener('keydown', function(event) {
+                if (ipImageModal.style   风格.display === 'block') {
+                    if (event.key === 'Escape') {
+                        ipImageModal.style   风格.display = 'none';
+                    } else if (event.key === 'ArrowLeft') {
+                        if (currentIpIndex > 0) {
+                            showIpImage(currentIpIndex - 1);
+                        }
+                    } else if (event.key === 'ArrowRight') {
+                        if (currentIpIndex < currentIpImages.length - 1) {
+                            showIpImage(currentIpIndex + 1);
+                        }
+                    }
+                }
+            });
+            
             // 滚动动画
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             };
             
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
+            const observer = new IntersectionObserver(function(entries) {const   常量   观察者 observer   观察者 = new   新 IntersectionObserver(function   函数(entries   条目)) {
+                entries.forEach(entry => {   条目。forEach(entry   条目 => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in-up');
+                        entry.target.classList.add('fade-in-up');entry   条目.target   目标.classList   班级名册.add   添加(“fade   “渐-in   在-up”   ”);
                         observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
             
-            document.querySelectorAll('section > div > .fade-in-up, .img-hover-zoom').forEach(el => {
+            document.querySelectorAll('section > div > .fade-in-up, .img-hover-zoom').forEach(el => {文档。querySelectorAll（'section b> div b> . '“ section    部分b >00 div b> ”）fade   )消失-in   在-up   向上, .img-hover   徘徊-zoom”)。forEach(el => {
                 observer.observe(el);
             });
             
@@ -699,6 +1124,6 @@
             updateActiveNav();
             mainVideo.play();
         });
-    </script>
-</body>
+    </script>   > < /脚本
+</body>   身体< / >
 </html>
